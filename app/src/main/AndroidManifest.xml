@@ -13,6 +13,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".LandingPageActivity" />
         <activity android:name=".SplashScreen" />
+        <activity android:name=".MenuPermainan"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
