@@ -4,6 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".LandingPageActivity">
+    <FrameLayout
+        android:id="@+id/fl_landing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_landing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabPaddingStart="16dp"
+            app:tabPaddingEnd="16dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="64dp"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
