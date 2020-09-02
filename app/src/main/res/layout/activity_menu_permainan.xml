@@ -16,6 +16,7 @@
         android:fontFamily="@font/comic"
         android:textSize="22sp"
         android:text="PILIH LAWANMU"
+        android:textColor="#1C1B1B"
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -36,9 +37,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/comic"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:text="Pemain vs Pemain"
+        android:textColor="#1C1B1B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/ivVsCom"
+        android:src="@drawable/ic_landing_page2"
+        app:layout_constraintTop_toBottomOf="@id/tvVsPemain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_width="163dp"
+        android:layout_height="135dp"/>
+
+    <TextView
+        android:id="@+id/tvVsCom"
+        app:layout_constraintTop_toBottomOf="@id/ivVsCom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/comic"
+        android:textSize="20sp"
+        android:textColor="#1C1B1B"
+        android:text="Pemain vs Com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
