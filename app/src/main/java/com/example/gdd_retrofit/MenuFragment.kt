@@ -2,11 +2,14 @@ package com.example.gdd_retrofit
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_menu.*
+import kotlin.system.exitProcess
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,14 +48,34 @@ class MenuFragment : Fragment() {
 
         //nambahin hasil dari login untuk nama pemain
         val preferences = this.activity!!
-            .getSharedPreferences("pref", Context.MODE_PRIVATE)
+            .getSharedPreferences(DataLoginUser.FIELD_ID, Context.MODE_PRIVATE)
+
+        val bundle = this.activity!!
+            .intent.extras
+
+        val nama = preferences.getString(DataLoginUser.FIELD_USERNAME, "Belum ada data")
+
+        tvVsPemain.setText("$nama VS Pemain 2")
+        tvVsCom.setText("$nama VS CPU")
+
+
         //klik menu permainan : Pemain 1 vs Pemain 2
+        ivVsPemain.setOnClickListener{
+            val i = Intent (context, Pemain1vsPemain2::class.java)
+            startActivity(i)
+        }
 
         //klik pemain vs komputer
+        ivVsCom.setOnClickListener{
+            val i = Intent (context, PemainVsCPU::class.java)
+            startActivity(i)
+        }
 
         //klik menu close
-
-        //perpindahan menu tab layout
+        iv_close.setOnClickListener{
+            val getActivity = this.activity!!
+            getActivity.onBackPressed()
+        }
     }
 
     companion object {
