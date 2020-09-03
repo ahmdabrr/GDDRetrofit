@@ -3,7 +3,8 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="biruMuda">#0396DA</color>
-    <color name="colorAccent">#26C6DA</color>
+    <color name="colorAccent">#B3E5FC</color>
     <color name="colorBG">#E3F2FD</color>
+    <color name="tulisanPink">#F06292</color>
 
 </resources>
