@@ -43,6 +43,7 @@ class MenuFragment : Fragment() {
         //nambahin hasil dari login untuk nama pemain
 
         //klik menu permainan : Pemain 1 vs Pemain 2
+
         //klik pemain vs komputer
         //klik menu clos
         //perpindahan menu tab layout

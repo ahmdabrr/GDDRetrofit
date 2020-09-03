@@ -258,7 +258,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/iv_fav"
+                android:id="@+id/iv_save"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="24dp"
