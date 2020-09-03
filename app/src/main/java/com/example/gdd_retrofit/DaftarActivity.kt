@@ -43,6 +43,8 @@ class DaftarActivity : AppCompatActivity() {
                     ) {
                         val message = response.body()?.message
 
+
+
                         Log.d("BNR", message.toString())
                         Toast.makeText(this@DaftarActivity, message, Toast.LENGTH_SHORT).show()
 
