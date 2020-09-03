@@ -43,7 +43,7 @@ class FragmentLanding3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         iv_next.setOnClickListener {
-            val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
         }
     }
