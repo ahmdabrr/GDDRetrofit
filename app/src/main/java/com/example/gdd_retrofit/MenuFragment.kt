@@ -1,10 +1,14 @@
 package com.example.gdd_retrofit
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.gdd_retrofit.loginUser.dataLogin
+import kotlinx.android.synthetic.main.fragment_menu.*
+import kotlin.system.exitProcess
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,7 +49,9 @@ class MenuFragment : Fragment() {
         //klik menu permainan : Pemain 1 vs Pemain 2
 
         //klik pemain vs komputer
-        //klik menu clos
+
+        //klik menu close
+
         //perpindahan menu tab layout
     }
 
