@@ -1,13 +1,13 @@
 package com.example.gdd_retrofit
 
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_menu.*
-import kotlin.system.exitProcess
+import androidx.fragment.app.Fragment
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,7 +44,8 @@ class MenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //nambahin hasil dari login untuk nama pemain
-
+        val preferences = this.activity!!
+            .getSharedPreferences("pref", Context.MODE_PRIVATE)
         //klik menu permainan : Pemain 1 vs Pemain 2
 
         //klik pemain vs komputer
