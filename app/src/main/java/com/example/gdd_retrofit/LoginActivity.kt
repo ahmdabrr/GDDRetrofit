@@ -1,6 +1,7 @@
 package com.example.gdd_retrofit
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -89,6 +90,25 @@ class LoginActivity : AppCompatActivity() {
                     ) {
                         val message = response.body()?.message
                         if (message == "Login Success") {
+
+                            val editor = getSharedPreferences(
+                                DataLoginUser.FIELD_EMAIL,
+                                Context.MODE_PRIVATE
+                            ).edit()
+
+                            editor.putString(
+                                DataLoginUser.FIELD_EMAIL,
+                                response.body()?.data?.email.toString()
+                            )
+                            editor.putString(
+                                DataLoginUser.FIELD_USERNAME,
+                                response.body()?.data?.username.toString()
+                            )
+                            editor.putString(
+                                DataLoginUser.FIELD_ID,
+                                response.body()?.data?.id.toString()
+                            )
+                            editor.commit()
                             goToMainACtivity()
                             progressDialog.dismiss()
                         } else {
@@ -113,6 +133,11 @@ class LoginActivity : AppCompatActivity() {
 
                 })
             }
+        }
+
+
+        tv_daftar.setOnClickListener {
+            startActivity(Intent(this, DaftarActivity::class.java))
         }
     }
 

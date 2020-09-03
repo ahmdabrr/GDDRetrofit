@@ -5,7 +5,7 @@ data class PostUserResponse(
     @SerializedName("data")
     val `data`: Data,
     @SerializedName("message")
-    val message: String,
+    var message: String,
     @SerializedName("status")
     val status: Int
 ) {
