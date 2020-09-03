@@ -37,6 +37,18 @@ class MenuFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //nambahin hasil dari login untuk nama pemain
+
+        //klik menu permainan : Pemain 1 vs Pemain 2
+
+        //klik pemain vs komputer
+        //klik menu clos
+        //perpindahan menu tab layout
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
