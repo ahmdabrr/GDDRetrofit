@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gdd_retrofit">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,9 +15,9 @@
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".LandingPageActivity" />
-        <activity android:name=".SplashScreen" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".MenuPermainan"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
