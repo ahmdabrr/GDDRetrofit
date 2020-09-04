@@ -6,7 +6,7 @@
     android:background="@color/colorAccent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DaftarActivity">
+    tools:context=".adduser.DaftarActivity">
 
     <ImageView
         android:id="@+id/iv_back_daftar"

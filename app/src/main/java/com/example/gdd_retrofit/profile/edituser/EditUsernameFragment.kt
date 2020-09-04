@@ -1,4 +1,4 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.profile.edituser
 
 import android.content.Context
 import android.os.Bundle
@@ -8,16 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.gdd_retrofit.R
 import com.example.gdd_retrofit.login.DataLoginUser
-import com.example.gdd_retrofit.network.ApiClient
 import com.example.gdd_retrofit.pojo.PutUserBody
-import com.example.gdd_retrofit.pojo.PutUserResponse
 import kotlinx.android.synthetic.main.fragment_edit_username.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,10 +24,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [EditUsernameFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EditUsernameFragment : DialogFragment() {
+class EditUsernameFragment : DialogFragment(), EditUsernameFragmentPresenter.Listener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var presenter:EditUsernameFragmentPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,54 +49,29 @@ class EditUsernameFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val presenter = EditUsernameFragmentPresenter(this)
         val sharedPreference =
             activity?.getSharedPreferences(DataLoginUser.SP_NAME, Context.MODE_PRIVATE)
+        var name = sharedPreference?.let { presenter.getName(it) }
 
-        var name = sharedPreference?.getString(DataLoginUser.FIELD_USERNAME, "")
-        val id = sharedPreference?.getString(DataLoginUser.FIELD_ID, "0")
         et_edit_username.setText(name)
 
         tv_cancel_edit.setOnClickListener {
-            dismiss()
+            presenter.dismissDialog()
         }
 
         tv_update.setOnClickListener {
-
-
+            val nama = et_edit_username.text.toString()
             Log.d("BNR", name.toString())
             val objectEdit =
                 PutUserBody(
-                    et_edit_username.text.toString(),
+                    nama,
                     ""
                 )
-
-            ApiClient.apiService.updateUser(objectEdit, id.toString()).enqueue(object :
-                Callback<PutUserResponse> {
-                override fun onResponse(
-                    call: Call<PutUserResponse>,
-                    response: Response<PutUserResponse>
-                ) {
-                    val sharedPreference1 =
-                        activity?.getSharedPreferences(DataLoginUser.SP_NAME, Context.MODE_PRIVATE)
-                    val editor = sharedPreference1?.edit()
-                    val nama = et_edit_username.text.toString()
-                    editor?.putString(DataLoginUser.FIELD_USERNAME, nama)
-                    editor?.apply()
-                    Log.d("BNR", nama)
-                    Log.d("BNR", sharedPreference1?.getString(DataLoginUser.FIELD_USERNAME, "").toString())
-                    Toast.makeText(context, "Update Username success", Toast.LENGTH_SHORT).show()
-                    dismiss()
-                }
-
-                override fun onFailure(call: Call<PutUserResponse>, t: Throwable) {
-                    Log.d("BNR", t.message.toString())
-                }
-
-            })
-
+            if (sharedPreference != null) {
+                presenter.editUser(objectEdit,it.context,sharedPreference,nama)
+            }
         }
-
-
     }
 
     override fun onStart() {
@@ -111,21 +82,14 @@ class EditUsernameFragment : DialogFragment() {
         )
     }
 
-
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EditUsernameFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(): EditUsernameFragment {
             return EditUsernameFragment()
         }
+    }
 
+    override fun dismissDialog() {
+        dismiss()
     }
 }

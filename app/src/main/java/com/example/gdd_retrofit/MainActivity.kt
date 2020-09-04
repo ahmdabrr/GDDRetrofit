@@ -1,15 +1,13 @@
 package com.example.gdd_retrofit
 
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.example.gdd_retrofit.login.DataLoginUser
+import com.example.gdd_retrofit.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
