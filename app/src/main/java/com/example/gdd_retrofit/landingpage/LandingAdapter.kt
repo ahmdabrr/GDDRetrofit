@@ -1,4 +1,4 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.landingpage
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

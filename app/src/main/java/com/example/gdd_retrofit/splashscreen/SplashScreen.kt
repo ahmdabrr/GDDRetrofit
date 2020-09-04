@@ -1,11 +1,12 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import kotlinx.android.synthetic.main.activity_splash_screen.*
+import com.example.gdd_retrofit.landingpage.LandingPageActivity
+import com.example.gdd_retrofit.R
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

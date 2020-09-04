@@ -1,7 +1,8 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.landingpage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gdd_retrofit.R
 import kotlinx.android.synthetic.main.activity_landing_page.*
 
 class LandingPageActivity : AppCompatActivity() {

@@ -16,10 +16,10 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".Pemain1vsPemain2"></activity>
         <activity android:name=".PemainVsCPU" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".LandingPageActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".landingpage.LandingPageActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".splashscreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

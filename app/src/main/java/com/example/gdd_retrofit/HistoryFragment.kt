@@ -55,5 +55,7 @@ class HistoryFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+
+        fun getInstance(): HistoryFragment = HistoryFragment()
     }
 }

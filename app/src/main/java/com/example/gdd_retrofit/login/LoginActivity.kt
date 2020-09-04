@@ -1,4 +1,4 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.login
 
 import android.app.ProgressDialog
 import android.content.Context
@@ -9,13 +9,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
+import com.example.gdd_retrofit.DaftarActivity
+import com.example.gdd_retrofit.MainActivity
+import com.example.gdd_retrofit.R
 import com.example.gdd_retrofit.network.ApiClient
 import com.example.gdd_retrofit.pojo.LoginUserBody
 import com.example.gdd_retrofit.pojo.LoginUserResponse
-import com.example.gdd_retrofit.pojo.PostUserResponse
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.SnackbarContentLayout
-import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -95,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
                         if (message == "Login Success") {
 
                             val editor = getSharedPreferences(
-                                DataLoginUser.FIELD_EMAIL,
+                                DataLoginUser.SP_NAME,
                                 Context.MODE_PRIVATE
                             ).edit()
 
@@ -111,10 +111,14 @@ class LoginActivity : AppCompatActivity() {
                                 DataLoginUser.FIELD_ID,
                                 response.body()?.data?.id.toString()
                             )
-                            editor.apply()
+                            editor.commit()
                             goToMainACtivity()
                             progressDialog.dismiss()
                             Log.d("BNR", "${response.body()?.data?.username}")
+
+                            Log.d("BNR", "${response.body()?.data?.email.toString()}")
+                            Log.d("BNR", "${response.body()?.data?.username.toString()}")
+                            Log.d("BNR", "${response.body()?.data?.id.toString()}")
                         } else {
                             progressDialog.dismiss()
                             Toast.makeText(
@@ -124,7 +128,8 @@ class LoginActivity : AppCompatActivity() {
                             ).show()
                             til_email_login.error = " "
                             til_password_login.error = " "
-                            Log.d("BNR", "${response.toString()}")
+                            Log.d("BNR", "${response.toString()} ${response.body()?.data?.email.toString()}")
+
                         }
 
                     }
