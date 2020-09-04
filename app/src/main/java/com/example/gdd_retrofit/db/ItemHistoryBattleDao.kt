@@ -1,10 +1,7 @@
 package com.example.gdd_retrofit.db
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
+import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import androidx.room.Query
 
 @Dao
 interface ItemHistoryBattleDao {
@@ -15,5 +12,8 @@ interface ItemHistoryBattleDao {
     fun insertHistory(item : ItemHistoryBattle):Long
 
     @Delete
-    fun deleteHistory(item : ItemHistoryBattle):Int
+    fun deleteHistory(item: ItemHistoryBattle):Int
+
+    @Update
+    fun updateHistory (item : ItemHistoryBattle) : Int
 }

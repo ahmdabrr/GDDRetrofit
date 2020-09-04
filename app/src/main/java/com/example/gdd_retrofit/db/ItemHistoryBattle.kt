@@ -10,7 +10,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 
 data class ItemHistoryBattle(
-    @PrimaryKey (autoGenerate = true) var tanggal : String,
-    @ColumnInfo (name = "pemain") var pemain : String,
+    @PrimaryKey (autoGenerate = true) var id : Int?,
+    @ColumnInfo (name = "pemainId") var pemainId : Int,
+    @ColumnInfo(name = "tanggal") var tanggal:String,
     @ColumnInfo (name = "hasil") var hasil : String
 ) : Parcelable

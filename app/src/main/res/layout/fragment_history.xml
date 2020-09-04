@@ -6,7 +6,7 @@
     android:background="@color/colorBG"
     android:id="@+id/history_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HistoryFragment">
+    tools:context=".history.HistoryFragment">
 
     <TextView
         android:id="@+id/tv_history_battle"
@@ -24,6 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_history"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tv_history_battle"

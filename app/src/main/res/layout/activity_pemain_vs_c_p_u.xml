@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBG"
-    tools:context=".PemainVsCPU">
+    tools:context=".gameLogic.PemainVsCPU">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/header1"

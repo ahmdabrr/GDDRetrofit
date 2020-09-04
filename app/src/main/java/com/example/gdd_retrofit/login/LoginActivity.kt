@@ -2,17 +2,25 @@ package com.example.gdd_retrofit.login
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import com.example.gdd_retrofit.adduser.DaftarActivity
-import com.example.gdd_retrofit.MainActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.example.gdd_retrofit.menuBattle.MainActivity
 import com.example.gdd_retrofit.R
+import com.example.gdd_retrofit.adduser.DaftarActivity
 import com.example.gdd_retrofit.pojo.LoginUserBody
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginActivityPresenter.Listener {
+
+
+    companion object {
+        const val SP_NAME = "login_data"
+        const val FIELD_ID = "iD"
+        const val FIELD_USERNAME = "username"
+        const val FIELD_EMAIL = "email"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -13,11 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".adduser.DaftarActivity"></activity>
-        <activity android:name=".Pemain1vsPemain2"></activity>
-        <activity android:name=".PemainVsCPU" />
+        <activity android:name=".gameLogic.Pemain1vsPemain2"></activity>
+        <activity android:name=".gameLogic.PemainVsCPU" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".landingpage.LandingPageActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".menuBattle.MainActivity" />
         <activity android:name=".splashscreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

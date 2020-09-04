@@ -1,4 +1,4 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.menuBattle
 
 
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.gdd_retrofit.R
+import com.example.gdd_retrofit.history.HistoryFragment
 import com.example.gdd_retrofit.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 

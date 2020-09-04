@@ -1,4 +1,4 @@
-package com.example.gdd_retrofit
+package com.example.gdd_retrofit.menuBattle
 
 
 import android.content.Context
@@ -8,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.gdd_retrofit.login.DataLoginUser
+import com.example.gdd_retrofit.gameLogic.Pemain1vsPemain2
+import com.example.gdd_retrofit.gameLogic.PemainVsCPU
+import com.example.gdd_retrofit.R
+import com.example.gdd_retrofit.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_menu.*
 
 
@@ -48,12 +51,9 @@ class MenuFragment : Fragment() {
 
         //nambahin hasil dari login untuk nama pemain
         val preferences = this.activity!!
-            .getSharedPreferences(DataLoginUser.FIELD_ID, Context.MODE_PRIVATE)
+            .getSharedPreferences(LoginActivity.SP_NAME, Context.MODE_PRIVATE)
 
-        val bundle = this.activity!!
-            .intent.extras
-
-        val nama = preferences.getString(DataLoginUser.FIELD_USERNAME, "Belum ada data")
+        val nama = preferences?.getString(LoginActivity.FIELD_USERNAME, "Belum ada data")
 
         tvVsPemain.setText("$nama VS Pemain 2")
         tvVsCom.setText("$nama VS CPU")
