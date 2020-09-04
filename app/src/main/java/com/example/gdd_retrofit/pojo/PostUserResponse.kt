@@ -3,18 +3,18 @@ import com.google.gson.annotations.SerializedName
 
 data class PostUserResponse(
     @SerializedName("data")
-    val `data`: Data,
+    val `data`: Data?,
     @SerializedName("message")
-    var message: String,
+    var message: String?,
     @SerializedName("status")
-    val status: Int
+    val status: Int?
 ) {
     data class Data(
         @SerializedName("email")
-        val email: String,
+        val email: String?,
         @SerializedName("id")
-        val id: Int,
+        val id: Int?,
         @SerializedName("username")
-        val username: String
+        val username: String?
     )
 }

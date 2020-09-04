@@ -12,6 +12,7 @@ import android.widget.Toast
 import com.example.gdd_retrofit.network.ApiClient
 import com.example.gdd_retrofit.pojo.LoginUserBody
 import com.example.gdd_retrofit.pojo.LoginUserResponse
+import com.example.gdd_retrofit.pojo.PostUserResponse
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.SnackbarContentLayout
 import kotlinx.android.extensions.LayoutContainer
@@ -89,6 +90,8 @@ class LoginActivity : AppCompatActivity() {
                         response: Response<LoginUserResponse>
                     ) {
                         val message = response.body()?.message
+                        Log.d("BNR", "${response.body()?.message}")
+                        Log.d("BNR", "${response.body()}")
                         if (message == "Login Success") {
 
                             val editor = getSharedPreferences(
@@ -108,9 +111,10 @@ class LoginActivity : AppCompatActivity() {
                                 DataLoginUser.FIELD_ID,
                                 response.body()?.data?.id.toString()
                             )
-                            editor.commit()
+                            editor.apply()
                             goToMainACtivity()
                             progressDialog.dismiss()
+                            Log.d("BNR", "${response.body()?.data?.username}")
                         } else {
                             progressDialog.dismiss()
                             Toast.makeText(
@@ -120,7 +124,7 @@ class LoginActivity : AppCompatActivity() {
                             ).show()
                             til_email_login.error = " "
                             til_password_login.error = " "
-                            Log.d("BNR", "Error")
+                            Log.d("BNR", "${response.toString()}")
                         }
 
                     }
