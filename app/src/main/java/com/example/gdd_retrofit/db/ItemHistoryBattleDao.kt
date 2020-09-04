@@ -9,11 +9,11 @@ import androidx.room.Query
 @Dao
 interface ItemHistoryBattleDao {
     @Query("SELECT * FROM ItemHistoryBattle")
-    fun getAllItem() : List<ItemHistoryBattle>
+    fun getAllHistory() : List<ItemHistoryBattle>
 
     @Insert(onConflict = REPLACE)
-    fun insertItem(item : ItemHistoryBattle):Long
+    fun insertHistory(item : ItemHistoryBattle):Long
 
     @Delete
-    fun deleteItem(item : ItemHistoryBattle):Int
+    fun deleteHistory(item : ItemHistoryBattle):Int
 }
