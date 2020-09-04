@@ -19,7 +19,7 @@ class PemainVsCPU : AppCompatActivity(), PemainVsCPUPresenter.Listener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityPemainVsCPUBinding.inflate(layoutInflater)
+        binding = ActivityPemainVsCPUBinding.inflate(layoutInflater)
         DatabaseHistoryBattle.getInstance(this)?.let {
             presenter = PemainVsCPUPresenter(it, this)
         }

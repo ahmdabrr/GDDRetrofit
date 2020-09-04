@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database (entities = [ItemHistoryBattle::class], version = 1)
 abstract class DatabaseHistoryBattle : RoomDatabase() {
-    abstract fun ItemHistoryBattleDao() : ItemHistoryBattleDao
+    abstract fun itemHistoryBattleDao() : ItemHistoryBattleDao
 
     companion object {
         private var INSTANCE: DatabaseHistoryBattle? = null
@@ -17,7 +17,7 @@ abstract class DatabaseHistoryBattle : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder (
                             context,
                             DatabaseHistoryBattle::class.java,
-                            "item,db"
+                            "item_db"
                 ).build()
             }
             return INSTANCE

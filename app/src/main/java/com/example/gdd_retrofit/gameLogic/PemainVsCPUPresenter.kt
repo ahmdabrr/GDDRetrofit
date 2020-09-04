@@ -107,7 +107,7 @@ class PemainVsCPUPresenter (private val db: DatabaseHistoryBattle, private val l
     }
     private fun saveHistory(item: ItemHistoryBattle){
         GlobalScope.launch {
-            val totalSaved = db.ItemHistoryBattleDao().insertHistory(item)
+            val totalSaved = db.itemHistoryBattleDao().insertHistory(item)
 
             Log.d("Hasil", "${item.hasil}, ${item.tanggal}")
             if (totalSaved > 0) {

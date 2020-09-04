@@ -14,7 +14,7 @@ class HistoryFragmentPresenter (val db:DatabaseHistoryBattle, val listener : Lis
 
     fun delete (item: ItemHistoryBattle) {
         GlobalScope.launch {
-            val rowDelete = db.ItemHistoryBattleDao().deleteHistory(item)
+            val rowDelete = db.itemHistoryBattleDao().deleteHistory(item)
             if (rowDelete > 0 ) {
                 listener.showDeletedSuccess()
             } else {
@@ -25,7 +25,7 @@ class HistoryFragmentPresenter (val db:DatabaseHistoryBattle, val listener : Lis
 
     fun fetchData() {
         GlobalScope.launch {
-            val listHistory = db.ItemHistoryBattleDao().getAllHistory()
+            val listHistory = db.itemHistoryBattleDao().getAllHistory()
             listener.showHistoryList(listHistory)
         }
     }
