@@ -131,7 +131,7 @@ class PemainVsCPU : AppCompatActivity() {
         }
 
         binding.ivArrowBack.setOnClickListener {
-            moveTaskToBack(true)
+            finish()
         }
 
         setContentView(view)
