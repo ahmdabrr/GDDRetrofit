@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.gdd_retrofit.login.DataLoginUser
 import kotlinx.android.synthetic.main.fragment_menu.*
-import kotlin.system.exitProcess
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -96,5 +96,6 @@ class MenuFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+        fun getInstance(): MenuFragment = MenuFragment()
     }
 }
