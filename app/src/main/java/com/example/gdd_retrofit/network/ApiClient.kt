@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiClient {
     const val BASE_URL = "https://still-temple-51886.herokuapp.com/api/v1/"
 
-    val client = OkHttpClient()
+    val client = OkHttpClient.Builder().build()
 
     val apiService: ApiService by lazy {
         val retrofit = Retrofit.Builder()
